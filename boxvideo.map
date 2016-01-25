@@ -1,0 +1,118 @@
+Open Watcom Linker Version 1.9
+Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
+Created on:       16/01/25 01:16:39
+Executable Image: boxvideo.sys
+creating a PE executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          00013000             00000550
+.idata                          00014000             000001f8
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+_TEXT                  CODE           AUTO           00011000        00000ebc
+TRANSFER CODE          CODE           AUTO           00012000        0000004e
+CONST                  DATA           DGROUP         00013000        0000014c
+CONST2                 DATA           DGROUP         0001314c        00000000
+_DATA                  DATA           DGROUP         0001314c        000003fd
+_BSS                   BSS            DGROUP         0001354c        00000004
+.idata                 .idata         .idata         00014000        000001f8
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: videomp.obj(C:\boxvnt\src\videomp.c)
+000110b1+      _HwVidFindAdapter@20
+00011269+      _HwVidInitialize@4
+000113a4+      _HwVidStartIO@8
+0001177a+      _HwSetPowerState@12
+0001177a+      _HwGetPowerState@12
+0001177f+      _HwGetChildDesc@24
+000117b3+      _HwVidResetHw@12
+000117c5       _DriverEntry@8
+Module: vidmpdat.obj(C:\boxvnt\src\vidmpdat.c)
+0001314c       _LegacyRanges
+0001318c       _ulNumLegacyRanges
+00013190       _VideoModes
+00013406       _ulAllModes
+0001354c       _PortVersion
+Module: boxv.obj(C:\boxvnt\src\boxv.c)
+0001340c+      _vga_regs_ext
+00013449+      _mode_640_480_8
+00013461+      _mode_800_600_8
+00013479+      _mode_1024_768_8
+00013491+      _mode_640_480_16
+000134a9+      _mode_800_600_16
+000134c1+      _mode_1024_768_16
+000134d9+      _mode_640_480_32
+000134f1+      _mode_800_600_32
+000119f3+      _find_mode@4
+00011a18*      _BOXV_mode_enumerate@8
+00011a65       _BOXV_ext_mode_set@24
+00011be2*      _BOXV_mode_set@8
+00011dc8       _BOXV_dac_set@16
+00011e38       _BOXV_detect@8
+00011e93       _BOXV_ext_disable@4
+00013509+      _mode_1024_768_32
+00013521+      _mode_list
+
+
+                        +----------------------+
+                        |   Imported Symbols   |
+                        +----------------------+
+
+Symbol                              Module
+======                              ======
+
+_VideoPortVerifyAccessRanges@12     VIDEOPRT.SYS
+_VideoPortGetDeviceBase@20          VIDEOPRT.SYS
+_VideoPortFreeDeviceBase@8          VIDEOPRT.SYS
+_VideoPortSetRegistryParameters@16  VIDEOPRT.SYS
+_VideoPortMapMemory@24              VIDEOPRT.SYS
+_VideoPortUnmapMemory@12            VIDEOPRT.SYS
+_VideoPortZeroMemory@8              VIDEOPRT.SYS
+_VideoPortInitialize@16             VIDEOPRT.SYS
+_VideoPortWritePortUchar@8          VIDEOPRT.SYS
+_VideoPortWritePortUshort@8         VIDEOPRT.SYS
+_VideoPortReadPortUchar@4           VIDEOPRT.SYS
+_VideoPortReadPortUshort@4          VIDEOPRT.SYS
+_VideoPortReadPortUlong@4           VIDEOPRT.SYS
+
+
+                        +--------------------+
+                        |   Libraries Used   |
+                        +--------------------+
+
+C:\WATCOM/lib386/nt/ddk\videoprt.lib
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  00100000 (1048576.)
+Memory size:  1652 (5714.)
+Entry point address: 000117c5
+Link time: 00:00.46
